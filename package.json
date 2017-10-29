@@ -8,12 +8,19 @@
     "prepublish": "npm run build",
     "prebuild": "npm run test"
   },
+  "keywords": [
+    "raureif-addon"
+  ],
   "main": "dist/index.js",
   "files": [
     "dist/*",
     "!dist/node",
     "!dist/polyfill.js"
   ],
+  "dependencies": {
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-lint-eslint": "^4.2.0"
+  },
   "devDependencies": {
     "raureif": "2.0.6",
     "yarn": "^1.2.1"
