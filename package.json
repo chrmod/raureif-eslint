@@ -1,6 +1,6 @@
 {
   "name": "raureif-eslint",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "build": "raureif build",
     "start": "raureif serve",
@@ -17,9 +17,13 @@
     "!dist/node",
     "!dist/polyfill.js"
   ],
+  "peerDependencies": {
+    "raureif": ">= 2.0.7"
+  },
   "dependencies": {
     "broccoli-funnel": "^2.0.1",
-    "broccoli-lint-eslint": "^4.2.0"
+    "broccoli-lint-eslint": "^4.2.0",
+    "broccoli-merge-trees": "^2.0.0"
   },
   "devDependencies": {
     "raureif": "2.0.6",

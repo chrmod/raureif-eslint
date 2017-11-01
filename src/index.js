@@ -1,5 +1,6 @@
 import eslint from 'broccoli-lint-eslint';
 import Funnel from 'broccoli-funnel';
+import MergeTrees from 'broccoli-merge-trees';
 import path from 'path';
 
 export default {
@@ -15,9 +16,12 @@ export default {
     };
     const lintTree = eslint(tree, options);
 
-    return new Funnel(lintTree, {
-      includes: ['**/*.lint-test.js'],
-      destDir: 'node',
-    });
+    return new MergeTrees([
+      new Funnel(lintTree, {
+        includes: ['**/*.lint-test.js'],
+        destDir: 'node',
+      }),
+      tree,
+    ]);
   },
 };
