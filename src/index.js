@@ -19,7 +19,7 @@ export default {
     return new MergeTrees([
       new Funnel(lintTree, {
         includes: ['**/*.lint-test.js'],
-        destDir: 'node',
+        destDir: 'tests/node',
       }),
       tree,
     ]);
